@@ -9,7 +9,7 @@
     <el-form-item prop="password">
       <el-input type="password" v-model="ruleForm.password"  placeholder="请输入密码"></el-input>
     </el-form-item>
-    <el-form-item prop="checkPassword">
+    <el-form-item prop="checkPass">
       <el-input type="password" v-model="ruleForm.checkPass"  placeholder="确认密码"></el-input>
     </el-form-item>
     <el-form-item>
@@ -54,7 +54,7 @@
           password: [
             { validator: validatePass, trigger: 'blur' }
           ],
-          checkPassword: [
+          checkPass: [
             { validator: validatePass2, trigger: 'blur' }
           ]
         }
@@ -64,7 +64,7 @@
       submitForm(formName) {
         this.$refs[formName].validate((valid) => {
           if (valid) {
-            alert('submit!');
+            this.$router.push({ path: '/index' })
           } else {
             console.log('error submit!!');
             return false;
